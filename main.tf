@@ -70,11 +70,11 @@ resource "aws_codebuild_project" "main" {
   }
 
   tags = {
-    Application = "${var.app_name}"
+    Application = var.app_name
     Billing     = "${var.environment}-${var.app_name}"
-    Environment = "${var.environment}"
+    Environment = var.environment
     Name        = "${var.environment}-${var.app_name}-docker-build"
-    Terraform   = "true"
+    Terraform   = true
   }
 }
 
